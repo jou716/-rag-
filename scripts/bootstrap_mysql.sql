@@ -1,0 +1,24 @@
+-- Run this file as a MySQL administrator.
+-- Replace CHANGE_ME_STRONG_PASSWORD before executing.
+-- Do not commit the real password to the repository.
+
+CREATE DATABASE IF NOT EXISTS exo_rag
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+CREATE USER IF NOT EXISTS 'exo_rag_app'@'localhost'
+  IDENTIFIED BY 'CHANGE_ME_STRONG_PASSWORD';
+ALTER USER 'exo_rag_app'@'localhost'
+  IDENTIFIED BY 'CHANGE_ME_STRONG_PASSWORD';
+
+CREATE USER IF NOT EXISTS 'exo_rag_app'@'127.0.0.1'
+  IDENTIFIED BY 'CHANGE_ME_STRONG_PASSWORD';
+ALTER USER 'exo_rag_app'@'127.0.0.1'
+  IDENTIFIED BY 'CHANGE_ME_STRONG_PASSWORD';
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, DROP, REFERENCES
+  ON exo_rag.* TO 'exo_rag_app'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, DROP, REFERENCES
+  ON exo_rag.* TO 'exo_rag_app'@'127.0.0.1';
+
+FLUSH PRIVILEGES;

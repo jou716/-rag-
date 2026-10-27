@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+*.docx
+
+# 原始产品目录与派生正文数据（公开仓库不提交）
+data/source_manifest.json
+data/processed/*
+!data/processed/.gitkeep
+
+data/indexes/*
+!data/indexes/.gitkeep
+data/models/*
+!data/models/.gitkeep
+artifacts/
+*.log
+node_modules/
+web/dist/
